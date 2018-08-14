@@ -1,5 +1,6 @@
 package com.example.tyler.myapplication;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -18,7 +19,6 @@ public class MainActivity extends AppCompatActivity {
     private Button mManualUpdate2;
 
 
-
     private Button mTeam1ManualUpdate;
     private Button mTeam2ManualUpdate;
     private Button mTeam1Plus;
@@ -28,6 +28,9 @@ public class MainActivity extends AppCompatActivity {
 
     private TextView mTeam1Score;
     private TextView mTeam2Score;
+
+    private Button mImageArray;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,6 +52,11 @@ public class MainActivity extends AppCompatActivity {
 
         mEditScore2 = findViewById(R.id.team2ManualEntry);
         mManualUpdate2 = findViewById(R.id.team2ManualUpdate);
+
+        mImageArray = findViewById(R.id.imageArray);
+
+        final Intent intent = new Intent(this, ImageArray.class);
+
 
         mManualUpdate1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -97,6 +105,14 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 score2++;
                 mTeam2Score.setText("Score: " + score2);
+            }
+        });
+
+        mImageArray.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View view) {
+                startActivity(intent);
             }
         });
 
