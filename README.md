@@ -1,6 +1,5 @@
 # ![CF](http://i.imgur.com/7v5ASc8.png) Simple Android Apps
 
-
 ## Resources  
   * [Android Buttons](https://developer.android.com/guide/topics/ui/controls/button.html)
   * [Android UI Events](https://developer.android.com/guide/topics/ui/ui-events.html)
@@ -29,6 +28,14 @@ in the list.
   Use the class to manually instantiate each unique item. Add all of the items
   to an array.
 * Your app should use an array of the items to cycle through what it's showing.
+
+Follow API-level 19 conventions to get access to the app resources and convert
+an id into an integer:
+
+```
+Drawable pic = getResources().getDrawable(cat.drawableId);
+picture.setImageDrawable(pic);
+```
 
 ## Documentation
 Create a directory called `screenshots` in the root of your project. Take a
